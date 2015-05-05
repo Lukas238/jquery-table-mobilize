@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo - jQuery Table Mobilize</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" href="css/theme-default.min.css">
+	
+	<style>
+		body{
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+	
+	<h1>Menu Semanál</h1>
+	
+	<table class="tableMobilize">
+	  <thead>
+		  <tr>
+			<th>Día</th>
+			<th>Desayuno</th>
+			<th>Almuerzo</th>
+			<th>Merienda</th>
+			<th>Cena</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+		  <tr>
+		  	<td>Lunes</td>
+		  	<td>Zumo de naranja, Leche, Madalenas</td>
+		  	<td>Mejillones al vapor, Melón</td>
+		  	<td>Yogur, Galletas</td>
+		  	<td>Pechuga y calabacines rebozados, Pera</td>
+		  </tr>
+		  <tr>
+		  	<td>Martes</td>
+		  	<td>Leche, Galletas</td>
+		  	<td>Guisantes con jamón, Sandía</td>
+		  	<td>Batido, Croasan</td>
+		  	<td>Croquetas de jamón, Flan</td>
+		  </tr>
+		  <tr>
+		  	<td>Miércoles</td>
+		  	<td>Zumo de piña, Tostadas</td>
+		  	<td>Carna en salsa, patatas, Natillas</td>
+		  	<td>Yogur con cereales</td>
+		  	<td>Boquerones fritos con repollo, Melocotón</td>
+		  </tr>
+		  <tr>
+		  	<td>Jueves</td>
+		  	<td>Mazana, Leche</td>
+		  	<td>Arroz 3 delicias y soza, Natillas</td>
+		  	<td>Bocadillo</td>
+		  	<td>Salmón con cebolla caramelizada, Cerezas</td>
+		  </tr>
+		  <tr>
+		  	<td>Viernes</td>
+		  	<td>Peras, Galletas</td>
+		  	<td>Judías blancas con chorizo, Mandarina</td>
+		  	<td>Leche, Galletas</td>
+		  	<td>Salmorejo, Huevos rellenos, Cuajada</td>
+		  </tr>
+		  
+		</tbody>
+	</table>
+
+
+	<!-- SCRIPTS -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/jquery.tableMobilize.min.js"></script>
+	
+	<script>
+		
+		$('table').tableMobilize();
+	
+	</script>
+	
+</body>
+</html>
