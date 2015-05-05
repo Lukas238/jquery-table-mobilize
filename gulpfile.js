@@ -3,13 +3,18 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
+	sourcemaps = require('gulp-sourcemaps'),
+	sass = require('gulp-sass'),
+	minifyCSS = require('gulp-minify-css'),
+	autoprefixer = require('gulp-autoprefixer'),
+	
     package = require('./package.json');
  
      
 var config = {
     src: './src',
     dist: './dist',
-	bower_src: './src/bower_components'
+	demo: './demo'
 }
  
 var banner = [
@@ -26,7 +31,7 @@ var banner = [
  
 
 gulp.task('js',function(){
-  gulp.src(config.src+'/*.js')
+  return gulp.src(config.src+'/*.js')
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(header(banner, { package : package }))
@@ -36,10 +41,35 @@ gulp.task('js',function(){
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(config.dist));
 });
- 
-gulp.task('bower',function(){
-  gulp.src(config.bower_src+'/jquery/dist/*.*')
-    .pipe(gulp.dest(config.dist));
+
+gulp.task('sass', function () {
+	return gulp.src(config.src+'/*.scss')
+	.pipe(sourcemaps.init())
+	.pipe(sass({errLogToConsole: true}))
+	.pipe(autoprefixer('last 4 version'))
+	.pipe(gulp.dest(config.dist))
+	.pipe(minifyCSS())
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(sourcemaps.write('./'))
+	.pipe(gulp.dest(config.dist));
+});
+
+
+/****************************
+	USER  TASKS
+****************************/
+
+//Build
+gulp.task('default', ['js', 'sass']);
+
+//Demo
+gulp.task('demo', ['js', 'sass'], function(){
+	gulp.src(config.dist+'/*.min.js')
+	.pipe(gulp.dest(config.demo+'/js'));
+	
+	gulp.src(config.dist+'/*.min.css')
+	.pipe(gulp.dest(config.demo+'/css'));
 });
  
-gulp.task('default', ['js', 'bower']);
+ 
+
