@@ -1,0 +1,36 @@
+{
+  "name": "jquery-table-mobilizer",
+  "version": "1.0.0",
+  "description": "Adds responsive view to HTML tables automatically.",
+  "main": "jquery.tableMobilize.min.js",
+  "dependencies": {
+		"jquery": ">=1.7"
+   },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-header": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-uglify": "^1.2.0",
+	"jshint-stylish": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Dasso",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lukas238/better-input-file.git"
+  },
+  "keywords": [
+    "html5",
+    "jquery",
+    "table",
+	"responsive"
+  ],
+  "bugs": {
+    "url": "https://github.com/Lukas238/better-input-file/issues"
+  },
+  "homepage": "https://github.com/Lukas238/better-input-file"
+}
