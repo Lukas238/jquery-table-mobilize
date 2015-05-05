@@ -21,7 +21,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lukas238/better-input-file.git"
+    "url": "https://github.com/Lukas238/jquery-table-mobilize.git"
   },
   "keywords": [
     "html5",
@@ -30,7 +30,7 @@
 	"responsive"
   ],
   "bugs": {
-    "url": "https://github.com/Lukas238/better-input-file/issues"
+    "url": "https://github.com/Lukas238/jquery-table-mobilize/issues"
   },
-  "homepage": "https://github.com/Lukas238/better-input-file"
+  "homepage": "https://github.com/Lukas238/jquery-table-mobilize"
 }
