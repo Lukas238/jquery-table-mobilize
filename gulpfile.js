@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	minifyCSS = require('gulp-minify-css'),
 	autoprefixer = require('gulp-autoprefixer'),
-	
+	browserSync = require('browser-sync'),
+	merge = require('merge-stream'),
     package = require('./package.json');
  
      
@@ -29,6 +30,19 @@ var banner = [
   '\n'
 ].join('');
  
+ 
+gulp.task('browser-sync', function() {
+    browserSync.init(null, {
+        server: {
+            baseDir: './demo'
+        }
+    });
+});
+
+gulp.task('bs-reload', function () {
+    browserSync.reload();
+});
+
 
 gulp.task('js',function(){
   return gulp.src(config.src+'/*.js')
@@ -55,20 +69,37 @@ gulp.task('sass', function () {
 });
 
 
+gulp.task('copy-demo', ['js', 'sass'], function () {
+	
+	var scrips = gulp.src(config.dist+'/*.min.js')
+		.pipe(gulp.dest(config.demo+'/js'))
+		.pipe(browserSync.reload({stream:true}));
+	
+	var styles = gulp.src([
+			config.dist+'/*.min.css',
+			config.dist+'/*.map'
+		])
+		.pipe(gulp.dest(config.demo+'/css'))
+		.pipe(browserSync.reload({stream:true}));
+	
+	return merge(scrips, styles);
+});
+
+
 /****************************
 	USER  TASKS
 ****************************/
 
-//Build
+//Build: Dist
 gulp.task('default', ['js', 'sass']);
 
+
+//Buld: Demo
+gulp.task('build-demo', ['copy-demo']);
+
 //Demo
-gulp.task('demo', ['js', 'sass'], function(){
-	gulp.src(config.dist+'/*.min.js')
-	.pipe(gulp.dest(config.demo+'/js'));
-	
-	gulp.src(config.dist+'/*.min.css')
-	.pipe(gulp.dest(config.demo+'/css'));
+gulp.task('demo', ['copy-demo', 'browser-sync'], function(){
+	gulp.watch(config.src+'/*.+(js|scss)', ['copy-demo', 'bs-reload']);
 });
  
  
