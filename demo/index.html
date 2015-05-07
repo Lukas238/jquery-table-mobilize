@@ -4,70 +4,162 @@
 	<meta charset="UTF-8">
 	<title>Demo - jQuery Table Mobilize</title>
 	
+	<!-- STYLES -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 	<link rel="stylesheet" href="css/theme-default.min.css">
 	
 	<style>
 		body{
-			padding: 20px;
+			padding: 1em;
+			font-size: 14px;
 		}
 	</style>
 </head>
 <body>
 	
 	
-	<h1>Menu Semanál</h1>
+	<h1>jQuery TableMobilize</h1>
 	
-	<table class="tableMobilize">
-	  <thead>
-		  <tr>
-			<th>Día</th>
-			<th>Desayuno</th>
-			<th>Almuerzo</th>
-			<th>Merienda</th>
-			<th>Cena</th>
-		  </tr>
-	  </thead>
-	  <tbody>
-		  <tr>
-		  	<td>Lunes</td>
-		  	<td>Zumo de naranja, Leche, Madalenas</td>
-		  	<td>Mejillones al vapor, Melón</td>
-		  	<td>Yogur, Galletas</td>
-		  	<td>Pechuga y calabacines rebozados, Pera</td>
-		  </tr>
-		  <tr>
-		  	<td>Martes</td>
-		  	<td>Leche, Galletas</td>
-		  	<td>Guisantes con jamón, Sandía</td>
-		  	<td>Batido, Croasan</td>
-		  	<td>Croquetas de jamón, Flan</td>
-		  </tr>
-		  <tr>
-		  	<td>Miércoles</td>
-		  	<td>Zumo de piña, Tostadas</td>
-		  	<td>Carna en salsa, patatas, Natillas</td>
-		  	<td>Yogur con cereales</td>
-		  	<td>Boquerones fritos con repollo, Melocotón</td>
-		  </tr>
-		  <tr>
-		  	<td>Jueves</td>
-		  	<td>Mazana, Leche</td>
-		  	<td>Arroz 3 delicias y soza, Natillas</td>
-		  	<td>Bocadillo</td>
-		  	<td>Salmón con cebolla caramelizada, Cerezas</td>
-		  </tr>
-		  <tr>
-		  	<td>Viernes</td>
-		  	<td>Peras, Galletas</td>
-		  	<td>Judías blancas con chorizo, Mandarina</td>
-		  	<td>Leche, Galletas</td>
-		  	<td>Salmorejo, Huevos rellenos, Cuajada</td>
-		  </tr>
-		  
+	
+	<h2>Example 1</h2>
+	<h3>Classic top row headers</h3>
+	
+	<table class="tableMobilize table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Trevor Cox</td>
+				<td>congue.In@lectusconvallis.org</td>
+				<td>Ap #728-5242 Nec Av.</td>
+				<td>Afghanistan</td>
+			</tr>
+			<tr>
+				<td>Amanda Hayes</td>
+				<td>dis@enimcommodo.co.uk</td>
+				<td>Ap #852-5268 Pharetra. Av.</td>
+				<td>Bouvet Island</td>
+			</tr>
+			<tr>
+				<td>Leah Roach</td>
+				<td>tincidunt.Donec@vitaealiquameros.co.uk</td>
+				<td>P.O. Box 431, 4904 Et Av.</td>
+				<td>Yemen</td>
+			</tr>
+			<tr>
+				<td>Tarik Hogan</td>
+				<td>Curabitur@Aenean.org</td>
+				<td>7031 Nostra, Ave</td>
+				<td>Ethiopia</td>
+			</tr>
+			<tr>
+				<td>Althea Mcguire</td>
+				<td>ligula@eros.com</td>
+				<td>P.O. Box 534, 9405 Non St.</td>
+				<td>Bahamas</td>
+			</tr>
 		</tbody>
 	</table>
-
+	
+	
+	<h2>Example 2</h2>
+	
+	<h3>Top row and first col headers</h3>
+	<table class="tableMobilize table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Trevor Cox</th>
+				<td>congue.In@lectusconvallis.org</td>
+				<td>Ap #728-5242 Nec Av.</td>
+				<td>Afghanistan</td>
+			</tr>
+			<tr>
+				<th>Amanda Hayes</th>
+				<td>dis@enimcommodo.co.uk</td>
+				<td>Ap #852-5268 Pharetra. Av.</td>
+				<td>Bouvet Island</td>
+			</tr>
+			<tr>
+				<th>Leah Roach</th>
+				<td>tincidunt.Donec@vitaealiquameros.co.uk</td>
+				<td>P.O. Box 431, 4904 Et Av.</td>
+				<td>Yemen</td>
+			</tr>
+			<tr>
+				<th>Tarik Hogan</th>
+				<td>Curabitur@Aenean.org</td>
+				<td>7031 Nostra, Ave</td>
+				<td>Ethiopia</td>
+			</tr>
+			<tr>
+				<th>Althea Mcguire</th>
+				<td>ligula@eros.com</td>
+				<td>P.O. Box 534, 9405 Non St.</td>
+				<td>Bahamas</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<h2>Example 3</h2>
+	<h3>Forced mobile view</h3>
+	
+	<table class="tableMobilize table-striped tableMobilized">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Trevor Cox</td>
+				<td>congue.In@lectusconvallis.org</td>
+				<td>Ap #728-5242 Nec Av.</td>
+				<td>Afghanistan</td>
+			</tr>
+			<tr>
+				<td>Amanda Hayes</td>
+				<td>dis@enimcommodo.co.uk</td>
+				<td>Ap #852-5268 Pharetra. Av.</td>
+				<td>Bouvet Island</td>
+			</tr>
+			<tr>
+				<td>Leah Roach</td>
+				<td>tincidunt.Donec@vitaealiquameros.co.uk</td>
+				<td>P.O. Box 431, 4904 Et Av.</td>
+				<td>Yemen</td>
+			</tr>
+			<tr>
+				<td>Tarik Hogan</td>
+				<td>Curabitur@Aenean.org</td>
+				<td>7031 Nostra, Ave</td>
+				<td>Ethiopia</td>
+			</tr>
+			<tr>
+				<td>Althea Mcguire</td>
+				<td>ligula@eros.com</td>
+				<td>P.O. Box 534, 9405 Non St.</td>
+				<td>Bahamas</td>
+			</tr>
+		</tbody>
+	</table>
 
 	<!-- SCRIPTS -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
