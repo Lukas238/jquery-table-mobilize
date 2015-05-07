@@ -1,0 +1,52 @@
+/***************************
+	MOBILE VIEW
+****************************/
+
+thead,
+tfooter {
+	display: none;
+	visibility: hidden;
+}
+
+td:hide {
+	display: none !important;
+}
+
+
+tbody,
+tr,
+th,
+td {
+	display: block;
+}
+
+
+
+td[data-title]:before {
+	content: attr(data-title) ": ";
+	color: $color-label;
+}
+
+th[data-title]:first-child:before{
+	content: '';
+ }
+  
+th:first-child{
+	font-size: 1.4em;
+	border-top: none;
+	vertical-align: bottom;
+	margin-top: .5em;
+	text-transform: uppercase;
+	border-bottom: 1px solid $color-border;
+	font-weight: normal;
+	text-align: left;
+	color: $color-th;
+} 
+
+td:first-child{
+	border-top: 2px solid $color-tr-border;
+}
+
+tr:first-child  td:first-child{
+	border-top: none !important;
+}
